@@ -1,16 +1,22 @@
 package com.pb.paises;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;
+import androidx.preference.PreferenceManager;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 
 import com.pb.paises.placeholder.PlaceholderContent;
+
+import java.util.prefs.Preferences;
 
 /**
  * A fragment representing a list of Items.
@@ -52,15 +58,24 @@ public class PaisesFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_paises_list, container, false);
-
+        // obtener preferencias en una variable llamada prefs
+        SharedPreferences prefs= PreferenceManager.getDefaultSharedPreferences(getContext());
         // Set the adapter
         if (view instanceof RecyclerView) {
             Context context = view.getContext();
             RecyclerView recyclerView = (RecyclerView) view;
-            if (mColumnCount <= 1) {
+            String tipoVisualizacion=prefs.getString("tipo_visualizacion","listado"); /* asignar a esta variable el valor de la propiedad tipo_visualizacion */
+            if (tipoVisualizacion.equals("listado")) {
                 recyclerView.setLayoutManager(new LinearLayoutManager(context));
             } else {
-                recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
+                recyclerView.setLayoutManager(new GridLayoutManager(context, 2));
+            }
+            boolean useDivider=prefs.getBoolean("linea",false); /* asignar a esta variable el valor almacenado en la propiedad línea */
+            if(useDivider) {
+                // Dibuja una línea divisoria entre elementos
+                DividerItemDecoration verticalDecoration = new DividerItemDecoration(recyclerView.getContext(),
+                        LinearLayout.VERTICAL);
+                recyclerView.addItemDecoration(verticalDecoration);
             }
             PlaceholderContent placeholderContent = new PlaceholderContent(getResources(),
                     getContext().getPackageName());
