@@ -3,10 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/piotr/AndroidStudioProjects/Paises/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Users/piotr/AndroidStudioProjects/Paises/app/src/main/res/layout/content_main.xml" value="0.2453125" />
         <entry key="..\:/Users/piotr/AndroidStudioProjects/Paises/app/src/main/res/layout/fragment_acerca_de.xml" value="0.18854166666666666" />
         <entry key="..\:/Users/piotr/AndroidStudioProjects/Paises/app/src/main/res/layout/fragment_detalle_pais.xml" value="0.21920289855072464" />
         <entry key="..\:/Users/piotr/AndroidStudioProjects/Paises/app/src/main/res/layout/fragment_pais.xml" value="0.21920289855072464" />
         <entry key="..\:/Users/piotr/AndroidStudioProjects/Paises/app/src/main/res/layout/fragment_paises_list.xml" value="0.21920289855072464" />
+        <entry key="..\:/Users/piotr/AndroidStudioProjects/Paises/app/src/main/res/menu/menu.xml" value="0.2453125" />
         <entry key="..\:/Users/piotr/AndroidStudioProjects/Paises/app/src/main/res/menu/menu_main.xml" value="0.18854166666666666" />
         <entry key="..\:/Users/piotr/AndroidStudioProjects/Paises/app/src/main/res/xml/root_preferences.xml" value="0.33" />
       </map>
